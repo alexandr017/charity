@@ -15,9 +15,9 @@ class CreateProjectModeratorsTable extends Migration
     {
         Schema::create('project_moderators', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('project_id');
+            $table->bigInteger('project_id')->unsigned();
             $table->foreign('project_id')->references('id')->on('projects');
-            $table->bigInteger('profile_id');
+            $table->bigInteger('profile_id')->unsigned();
             $table->foreign('profile_id')->references('id')->on('profiles');
             $table->timestamps();
         });

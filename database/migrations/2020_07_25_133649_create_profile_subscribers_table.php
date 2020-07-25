@@ -15,9 +15,9 @@ class CreateProfileSubscribersTable extends Migration
     {
         Schema::create('profile_subscribers', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('profile_id');
+            $table->bigInteger('profile_id')->unsigned();
             $table->foreign('profile_id')->references('id')->on('profiles');
-            $table->bigInteger('on_profile_id');
+            $table->bigInteger('on_profile_id')->unsigned();
             $table->foreign('on_profile_id')->references('id')->on('profiles');
             $table->timestamps();
         });

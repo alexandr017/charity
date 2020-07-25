@@ -19,7 +19,7 @@ class CreateProfilesTable extends Migration
             $table->string('last_name')->nullable();
             $table->string('nik_name')->nullable();
             $table->date('birth_day')->nullable();
-            $table->smallInteger('profile_type')->default(1);
+            $table->smallInteger('profile_type')->default(1)->unsigned();
             $table->foreign('profile_type')->references('id')->on('profile_types');
             $table->string('photo_url')->nullable();
             $table->text('profile_description')->nullable();

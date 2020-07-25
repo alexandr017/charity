@@ -15,12 +15,12 @@ class CreateProjectLinksTable extends Migration
     {
         Schema::create('project_links', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('project_id');
+            $table->bigInteger('project_id')->unsigned();
             $table->foreign('project_id')->references('id')->on('projects');
             $table->string('title');
             $table->string('icon_url');
             $table->string('link');
-            
+
             $table->timestamps();
         });
     }

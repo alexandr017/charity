@@ -15,10 +15,10 @@ class CreateProfileSkillsTable extends Migration
     {
         Schema::create('profile_skills', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('profile_id');
+            $table->bigInteger('profile_id')->unsigned();
             $table->foreign('profile_id')->references('id')->on('profiles');
-            $table->bigInteger('skill_id');
-            $table->foreign('skills_id')->references('id')->on('skills');
+            $table->bigInteger('skill_id')->unsigned();
+            $table->foreign('skill_id')->references('id')->on('skills');
             $table->timestamps();
         });
     }

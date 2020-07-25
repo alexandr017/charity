@@ -18,7 +18,7 @@ class CreateProjectTasksTable extends Migration
             $table->string('name');
             $table->text('task_description');
             $table->string('icon_url');
-            $table->smallInteger('status_id');
+            $table->smallInteger('status_id')->unsigned();
             $table->foreign('status_id')->references('id')->on('project_task_statuses');
             $table->timestamps();
         });

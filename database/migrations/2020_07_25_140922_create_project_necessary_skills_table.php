@@ -15,9 +15,9 @@ class CreateProjectNecessarySkillsTable extends Migration
     {
         Schema::create('project_necessary_skills', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('project_id');
+            $table->bigInteger('project_id')->unsigned();
             $table->foreign('project_id')->references('id')->on('projects');
-            $table->bigInteger('skill_id');
+            $table->bigInteger('skill_id')->unsigned();
             $table->foreign('skill_id')->references('id')->on('skills');
             $table->timestamps();
         });
