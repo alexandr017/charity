@@ -20,8 +20,8 @@ class CreateProjectLinksTable extends Migration
             $table->string('title');
             $table->string('icon_url');
             $table->string('link');
-
             $table->timestamps();
+            $table->softDeletes('deleted_at');
         });
     }
 

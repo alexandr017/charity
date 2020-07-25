@@ -29,6 +29,7 @@ class CreateProfilesTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes('deleted_at');
         });
     }
 

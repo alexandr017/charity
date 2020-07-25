@@ -17,6 +17,7 @@ class CreateProjectTaskStatusesTable extends Migration
             $table->smallIncrements('id');
             $table->string('name');
             $table->timestamps();
+            $table->softDeletes('deleted_at');
         });
     }
 

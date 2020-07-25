@@ -17,6 +17,7 @@ class CreateProfileTypesTable extends Migration
             $table->smallIncrements('id');
             $table->string('name')->unique();
             $table->timestamps();
+            $table->softDeletes('deleted_at');
         });
     }
 

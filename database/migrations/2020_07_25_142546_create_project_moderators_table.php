@@ -20,6 +20,7 @@ class CreateProjectModeratorsTable extends Migration
             $table->bigInteger('profile_id')->unsigned();
             $table->foreign('profile_id')->references('id')->on('profiles');
             $table->timestamps();
+            $table->softDeletes('deleted_at');
         });
     }
 

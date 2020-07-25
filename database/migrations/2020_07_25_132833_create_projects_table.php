@@ -21,6 +21,7 @@ class CreateProjectsTable extends Migration
 
             $table->unsignedSmallInteger('status');
             $table->timestamps();
+            $table->softDeletes('deleted_at');
         });
     }
 

@@ -21,6 +21,7 @@ class CreateProjectTasksTable extends Migration
             $table->smallInteger('status_id')->unsigned();
             $table->foreign('status_id')->references('id')->on('project_task_statuses');
             $table->timestamps();
+            $table->softDeletes('deleted_at');
         });
     }
 

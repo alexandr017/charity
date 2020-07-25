@@ -20,6 +20,7 @@ class CreateProfileSubscribersTable extends Migration
             $table->bigInteger('on_profile_id')->unsigned();
             $table->foreign('on_profile_id')->references('id')->on('profiles');
             $table->timestamps();
+            $table->softDeletes('deleted_at');
         });
     }
 
